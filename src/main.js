@@ -5,6 +5,9 @@ const path = require("path");
 var bodyParser = require("body-parser");
 const session = require("express-session");
 const JWTObject = require("./middleware/JWTAction");
+require("dotenv").config();
+const PORT = process.env.PORT || 5000;
+
 // config
 // app.use(
 //   session({
@@ -29,6 +32,6 @@ app.set("view engine", "ejs");
 // route
 app.use("/", indexRoute);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("listen to http://localhost:3000");
 });
